@@ -22,6 +22,8 @@ a{
   padding-right: 10%;
 }
 
+
+
 .btn{
   background: #fff;
   color: #212121;
@@ -35,7 +37,25 @@ a{
   align-items: center;
   justify-content: center;
 }
+
+
 .btn img{
   width: 20px;
   margin-left: 10px;
+}
+
+.btn.dark-btn{
+  background: #212ea0;
+  color: #fff;
+}
+
+/* ---------------- media query ---------- */
+@media (max-width: 1200px) {
+  .container{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .btn{
+  padding: 14px 22px;
+  }
 }
