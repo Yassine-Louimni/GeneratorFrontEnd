@@ -1,0 +1,70 @@
+/* Styles généraux */
+.containerr {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Card Styles */
+  .template-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 30px;
+    margin: 20px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .template-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image Styling */
+  .template-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Title Styling */
+  .template-card h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Paragraph Styling */
+  .template-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Button Styling */
+  .btn-view-template {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff7a18, #212EA0);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-view-template:hover {
+    background: linear-gradient(90deg, #212EA0, #ff7a18);
+    transform: scale(1.05);
+  }
+  
+  .btn-view-template:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(229, 46, 113, 0.6);
+  }
+  
