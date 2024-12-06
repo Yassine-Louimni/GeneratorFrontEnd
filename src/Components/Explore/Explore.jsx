@@ -16,6 +16,7 @@ const Explore = () => {
           <h3>Secure Hosting</h3>
           <a href="/template" className="btn-view-template">View Template</a>
           <a href="/login" className="btn-view-template">Update Template</a>
+          <a href="/update" className="btn-view-template">Update Template</a>
         </div>
         
         <Footer />
