@@ -40,3 +40,19 @@
         margin: 15px auto 30px;
     }
 }
+
+/* Add this new style for the button */
+.hero .btn {
+    background-color: white !important; /* Set background color to white */
+    color: #020733 !important; /* Optional: Set text color to black for contrast */
+    padding: 10px 20px !important; /* Optional: Add some padding */
+    border: none !important; /* Optional: Remove border */
+    border-radius: 5px !important; /* Optional: Add rounded corners */
+    text-decoration: none !important; /* Optional: Remove underline from link */
+    transition: background-color 0.3s !important; /* Optional: Add transition for hover effect */
+}
+
+.hero .btn:hover {
+    background-color: #f0f0f0 !important; /* Optional: Change background on hover */
+}
+
