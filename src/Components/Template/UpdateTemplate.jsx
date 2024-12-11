@@ -402,59 +402,20 @@ const UpdateTemplate = () => {
   <div className="py-vh-4 bg-gray-100 w-100 overflow-hidden" id="aboutus">
 <div className="container">
 <div className="row d-flex justify-content-between align-items-center">
-{/* Left Column */}
-{[1, 2, 3].map((i) => (
-    <div key={`about-image-${i}`} className="col-md-4">
-      <img
-        src={variables[`image${i}`]}
-        alt={`About Us ${i}`}
-        className="img-fluid"
-      />
-
-<div className="col-lg-6">
-    <div className="row gx-5 d-flex">
-      <div className="col-md-11">
-        <div
-          className="shadow ratio ratio-16x9 rounded bg-cover bp-center align-self-end"
-          data-aos="fade-right"
-        >
-          <img
-            src={variables[`image${i}`]}
-            alt={`About Us ${i}`}
-            className="img-fluid"
-          />
+    <div className="col-md-8">
+        <div className="row">
+          {[1, 2, 3].map((i) => (
+            <div key={`about-image-${i}`} className="col-md-4">
+              <img
+                src={variables[`image${i}`]}
+                alt={`About Us ${i}`}
+                className="img-fluid rounded"
+                data-aos="fade-up"
+              />
+            </div>
+          ))}
         </div>
       </div>
-      <div className="col-md-5 offset-md-1">
-        <div
-          className="shadow ratio ratio-1x1 rounded bg-cover mt-5 bp-center float-end"
-          data-aos="fade-up"
-        >
-          <img
-            src={variables[`image${i}`]}
-            alt={`About Us ${i}`}
-            className="img-fluid"
-          />
-        </div>
-      </div>
-      <div className="col-md-6">
-        <div
-          className="col-12 shadow ratio rounded bg-cover mt-5 bp-center"
-          data-aos="fade-left"
-        >
-          <img
-            src={variables[`image${i}`]}
-            alt={`About Us ${i}`}
-            className="img-fluid"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-))}
-
 
 {/* Right Column */}
 <div className="col-lg-4">
