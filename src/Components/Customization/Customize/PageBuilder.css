@@ -1,0 +1,116 @@
+/* PageBuilder.css */
+.containerCus{
+  margin-top: 60px;
+}
+/* Container for the entire editor panel */
+.editor-panel {
+    margin-top: 55px;
+    height: 100vh;
+    width: 100%;/* Dark blue background */
+    color: rgb(193, 186, 186);
+    font-family: 'Arial', sans-serif;
+   
+  }
+  
+  /* Sidebar where blocks are displayed */
+  #blocks {
+    width: 300px;
+    background-color: #0e2349; /* Darker blue for the sidebar */
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  #blocks .gjs-block-category {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  
+  /* Blocks styling */
+  #blocks .gjs-block {
+    background-color: #3c4757; /* Slightly lighter blue */
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  #blocks .gjs-block:hover {
+    background-color: #475d75;
+    transform: translateY(-5px);
+  }
+  
+  /* The main GrapesJS editor container (Canvas Area) */
+  #editor {
+    flex-grow: 1;
+    background-color: #ffffff; /* Clean white background */
+    padding: 10px;
+    border-left: 4px solid #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+  
+  /* Navbar block styling */
+  
+  /* Hero section styling */
+  section {
+    padding: 80px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    color: #333333;
+    margin-bottom: 30px;
+  }
+  
+  /* Footer styling */
+  footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #2a3d57; /* Dark blue footer */
+    color: white;
+    border-radius: 8px;
+    margin-top: 50px;
+  }
+  
+  /* Form styling */
+  form {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccd1d9;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  form button {
+    padding: 12px 20px;
+    background-color: #2a3d57; /* Dark blue button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #1f2a3b;
+  }
+  
