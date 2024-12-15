@@ -19,7 +19,10 @@
     "axios": "^1.7.8",
     "framer-motion": "^11.11.17",
     "grapesjs": "^0.22.4",
+<<<<<<< Updated upstream
     "grapesjs-preset-webpage": "^1.0.3",
+=======
+>>>>>>> Stashed changes
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
