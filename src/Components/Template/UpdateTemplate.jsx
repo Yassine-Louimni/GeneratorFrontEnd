@@ -52,10 +52,117 @@ const UpdateTemplate = () => {
     }
   };
 
+
+
   const handleUpdate = () => {
-    alert("Template updated!");
-    // Add backend integration here if needed
+    alert("Template updated successfully!");
+    console.log("Updated Variables:", variables);
+    // Vous pouvez ici ajouter une intégration backend pour sauvegarder les données.
   };
+  
+  const handleDownload = () => {
+    // Create an HTML structure with updated template content
+    const templateHTML = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon.png">
+        <title>${variables.slideText1}</title>
+        <link rel="stylesheet" href="css/theme.css">
+        <link rel="stylesheet" href="UpdateTemplate.css">
+      </head>
+      <body>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+          <div class="container">
+            <a class="navbar-brand pe-4 fs-4" href="/">${variables.logo}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#aboutus">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#footer">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+  
+        <main>
+          <section id="top" style="background-image: url(${variables.slide}); background-size: cover;">
+            <div class="container position-relative">
+              <div class="row">
+                <div class="col-lg-7 py-vh-6 position-relative" data-aos="fade-right">
+                  <h1>${variables.slideText1}</h1>
+                  <p>${variables.slideText2}</p>
+                </div>
+              </div>
+            </div>
+          </section>
+  
+          <section id="services">
+            <div class="container">
+              <div class="row">
+                ${[1, 2, 3].map(i => `
+                  <div class="col-md-4" data-aos="fade-up">
+                    <h3>${variables[`service${i}`]}</h3>
+                    <p>${variables[`txtService${i}`]}</p>
+                  </div>`).join("")}
+              </div>
+            </div>
+          </section>
+  
+          <section id="aboutus">
+            <div class="container">
+              <div class="row">
+                ${[1, 2, 3].map(i => `
+                  <div class="col-md-4">
+                    <img src="${variables[`image${i}`]}" alt="About Us ${i}" class="img-fluid">
+                  </div>`).join("")}
+                <div class="col-lg-4">
+                  <h3>${variables.aboutUs1}</h3>
+                  <p>${variables.aboutUs}</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+  
+        <footer id="footer">
+          <p>${variables.address}</p>
+          <ul>
+            <li>Terms of Service</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </footer>
+  
+        <script src="aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
+      </body>
+      </html>
+    `;
+  
+    // Create a Blob and download the HTML file
+    const blob = new Blob([templateHTML], { type: "text/html" });
+    const url = URL.createObjectURL(blob);
+  
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "template.html"; // File name
+    a.click();
+  
+    URL.revokeObjectURL(url);
+  };
+  
 
   return (
    
@@ -190,14 +297,21 @@ const UpdateTemplate = () => {
       ></textarea>
     </div>
     <div className="text-center">
-      <button
-        type="button"
-        className="btn btn-primary"
-        onClick={handleUpdate}
-      >
-        Update
-      </button>
-    </div>
+  <button
+    type="button"
+    className="btn btn-primary"
+    onClick={handleUpdate}
+  >
+    Update
+  </button>
+  <button
+    type="button"
+    className="btn btn-secondary"
+    onClick={handleDownload}
+  >
+    Download
+  </button>
+</div>
   </form>
 </div>
         
