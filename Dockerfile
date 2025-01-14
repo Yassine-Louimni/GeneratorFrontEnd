@@ -1,26 +1,26 @@
 # Use an official Node.js runtime as the base image
 FROM node:16
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json files
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install production dependencies
+RUN npm install --production
 
-# Copy the rest of the application code
+# Copy the application code
 COPY . .
 
-# Build the application for production
+# Build the application
 RUN npm run build
 
-# Serve the application using a lightweight web server
+# Serve the application with a lightweight server
 RUN npm install -g serve
 
 # Expose the port the app runs on
 EXPOSE 3000
 
-# Command to run the application
+# Command to serve the app
 CMD ["serve", "-s", "build"]
