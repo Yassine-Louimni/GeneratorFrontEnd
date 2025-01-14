@@ -13,16 +13,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repository code
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      # Step 2: Setup Node.js environment
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
+      # Step 3: Install dependencies
       - name: Install Dependencies
         run: npm install
 
+      # Step 4: Run tests using Jest
       - name: Run Tests
-        run: npm test -- --ci --watch=false
+        run: npm test -- --ci
