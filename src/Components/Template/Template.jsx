@@ -168,7 +168,7 @@ function Template() {
           <div className="col-md-9 flex-fill">
             <h3 className="h5 my-2">Delivery Service</h3>
             <p>
-              If we had any physical goods we would deliver them to your door steps. Of course in time and to the right address. But we have no products...
+              If we had any physical goods we would deliver them to your door steps. ...
             </p>
           </div>
         </div>
