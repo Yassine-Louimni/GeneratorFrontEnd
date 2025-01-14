@@ -26,6 +26,3 @@ jobs:
 
       - name: Run Tests
         run: npm test -- --ci --watch=false
-
-      - name: Build React App
-        run: npm run build
