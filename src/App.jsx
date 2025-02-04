@@ -22,7 +22,6 @@ function App() {
           <Route path="/update" element={<UpdateTemplate />} />
           <Route path='/custom' element={<Customization />} />
           <Route path='/customize' element={<Customize/>} />
-
         </Routes>
       </div>
     </Router>
