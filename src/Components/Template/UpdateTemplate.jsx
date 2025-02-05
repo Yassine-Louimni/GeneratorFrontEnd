@@ -8,11 +8,13 @@ import slide from "./img/webp/interior11.webp";
 import imge1 from "./img/webp/people15.webp";
 import imge2 from "./img/webp/people15.webp";
 import imge3 from "./img/webp/people4.webp";
+import imge4 from "./img/webp/people15.webp";
+
 
 const UpdateTemplate = () => {
   const [variables, setVariables] = useState({
-    logo: "default-logo.png",
-    slide: slide,
+    image4: imge4,
+    image5: slide,
     slideText1: "Default slide text 1",
     slideText2: "Default slide text 2",
     service1: "Service 1",
@@ -71,7 +73,7 @@ const UpdateTemplate = () => {
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon.png" />
-    <title><!-- Add dynamic content here using JavaScript --></title>
+    <title>${variables.slideText1}</title>
     <link rel="stylesheet" href="aos/dist/aos.css" />
     <link rel="stylesheet" href="./css/theme.css" />
   </head>
@@ -80,7 +82,7 @@ const UpdateTemplate = () => {
       <!-- Navbar -->
       <nav id="navScroll" class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-          <a class="navbar-brand pe-4 fs-4" href="/"> <!-- Dynamic Logo here --> </a>
+         <a className="navbar-brand pe-4 fs-4" href="/"> <div className="navbar-brand pe-4 fs-4" data-aos="fade-right"   style="background-image: url(${variables.image4});"></div></a>
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -101,7 +103,7 @@ const UpdateTemplate = () => {
       <main>
         <div class="w-100 overflow-hidden bg-gray-100" id="top">
           <div class="container position-relative">
-            <div class="col-12 col-lg-8 mt-0 h-100 position-absolute top-0 end-0 bg-cover" data-aos="fade-left" style="background-image: url(${variables.slide});"></div>
+            <div class="col-12 col-lg-8 mt-0 h-100 position-absolute top-0 end-0 bg-cover" data-aos="fade-left" style="background-image: url(${variables.image5});"></div>
             <div class="row">
               <div class="col-lg-7 py-vh-6 position-relative" data-aos="fade-right">
                 <h1 class="display-1 fw-bold mt-5"> ${variables.slideText1}</h1>
@@ -235,27 +237,43 @@ const UpdateTemplate = () => {
       <label htmlFor="logo" className="form-label">
         Logo URL
       </label>
-      <input
-        type="text"
-        className="form-control"
-        id="logo"
-        name="logo"
-        value={variables.logo}
-        onChange={handleInputChange}
-      />
+      <div key="image4" className="mb-2">
+          <input
+            type="file"
+            className="form-control mt-2"
+            onChange={(e) => handleImageChange(e, 4)}
+          />
+        <input
+            type="text"
+            className="form-control mt-2"
+            placeholder="slide"
+            name="slide"
+            value={variables.image4}
+            onChange={handleInputChange}
+          />
+        </div>
+
     </div>
     <div className="mb-3">
       <label htmlFor="slide" className="form-label">
         Slide Image URL
       </label>
-      <input
-        type="text"
-        className="form-control"
-        id="slide"
-        name="slide"
-        value={variables.slide}
-        onChange={handleInputChange}
-      />
+      <div key="image5" className="mb-2">
+          <input
+            type="file"
+            className="form-control mt-2"
+            onChange={(e) => handleImageChange(e, 5)}
+          />
+          <input
+            type="text"
+            className="form-control mt-2"
+            placeholder="slide"
+            name="slide"
+            value={variables.image5}
+            onChange={handleInputChange}
+          />
+        </div>
+    
       <textarea
         className="form-control mt-2"
         name="slideText1"
@@ -415,7 +433,7 @@ const UpdateTemplate = () => {
       <div data-bs-spy="scroll" data-bs-target="#navScroll">
       <nav id="navScroll" className="navbar navbar-expand-lg navbar-light fixed-top">
   <div className="container">
-    <a className="navbar-brand pe-4 fs-4" href="/">{variables.logo}</a>
+    <a className="navbar-brand pe-4 fs-4" href="/"> <div className="navbar-brand pe-4 fs-4" data-aos="fade-right"   style={{ backgroundImage: `url(${variables.image4})` }}></div></a>
 
     <button
       className="navbar-toggler"
@@ -453,7 +471,7 @@ const UpdateTemplate = () => {
             <div
   className="col-12 col-lg-8 mt-0 h-100 position-absolute top-0 end-0 bg-cover"
   data-aos="fade-left"
-  style={{ backgroundImage: `url(${variables.slide})` }} // Utilisation correcte de l'image dans le style
+  style={{ backgroundImage: `url(${variables.image5})` }} // Utilisation correcte de l'image dans le style
 ></div>
               <div className="row">
                 <div
