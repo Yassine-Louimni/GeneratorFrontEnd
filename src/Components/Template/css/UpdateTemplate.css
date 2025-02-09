@@ -12,7 +12,6 @@
   left: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
-  opacity: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,6 +131,6 @@
   }
   
   .scrollable-form {
-    max-height: 1500px;  /* Adjust the height as needed */
+    max-height: 1000px;  /* Adjust the height as needed */
     overflow-y: auto;   /* Enable vertical scrolling */
   }
