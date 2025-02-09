@@ -76,6 +76,7 @@ const UpdateTemplate = () => {
     <title>${variables.slideText1}</title>
     <link rel="stylesheet" href="aos/dist/aos.css" />
     <link rel="stylesheet" href="./css/theme.css" />
+    <link rel="stylesheet" href="./css/UpdateTemplate.css" />
   </head>
   <body>
     <div data-bs-spy="scroll" data-bs-target="#navScroll">
