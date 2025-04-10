@@ -49,7 +49,7 @@
   /* The main GrapesJS editor container (Canvas Area) */
   #editor {
     flex-grow: 1;
-    background-color: #ffffff; /* Clean white background */
+    background-color: #444; /* Clean white background */
     padding: 10px;
     border-left: 4px solid #e5e5e5;
     display: flex;
@@ -113,4 +113,133 @@
   form button:hover {
     background-color: #1f2a3b;
   }
+
+
+  /* Social Icons Styles */
+.social-icons-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding: 15px;
+  background-color: var(--secondary-bg);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.social-icons-container a {
+  color: white;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons-container a:hover {
+  transform: translateY(-3px);
+}
+
+/* Specific icon colors */
+.social-icons-container .fa-facebook-f { color: #3b5998; }
+.social-icons-container .fa-twitter { color: #1da1f2; }
+.social-icons-container .fa-instagram { color: #e1306c; }
+.social-icons-container .fa-linkedin-in { color: #0077b5; }
+.social-icons-container .fa-youtube { color: #ff0000; }
+.social-icons-container .fa-pinterest { color: #e60023; }
+.social-icons-container .fa-tiktok { color: #000000; }
+
+/* Style Manager Popup */
+.style-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.style-popup {
+  background-color: #2d3748;
+  border-radius: 8px;
+  width: 350px;
+  max-height: 80vh;
+  overflow: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.style-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #4a5568;
+  background-color: #1a202c;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.style-popup-header h3 {
+  margin: 0;
+  color: white;
+  font-size: 16px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #a0aec0;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: white;
+}
+
+.style-popup-content {
+  padding: 15px;
+}
+
+/* Style Manager customizations */
+.gjs-sm-sector {
+  border-bottom: 1px solid #4a5568;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.gjs-sm-title {
+  color: #e2e8f0 !important;
+  font-weight: 600 !important;
+}
+
+.gjs-sm-property {
+  background-color: #2d3748 !important;
+  border-color: #4a5568 !important;
+}
+
+.gjs-sm-label {
+  color: #a0aec0 !important;
+}
+
+.gjs-sm-input {
+  background-color: #1a202c !important;
+  color: white !important;
+  border-color: #4a5568 !important;
+}
+
+.gjs-sm-sector.gjs-sm-open {
+  background-color: rgba(74, 85, 104, 0.2) !important;
+}
+
+
   
