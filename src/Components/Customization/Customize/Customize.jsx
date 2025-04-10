@@ -559,7 +559,7 @@ const Editor = () => {
             style={{
               flex: 1,
               overflow: "auto",
-              background: "#222"
+              background: "#444"
             }}
           ></div>
         </div>
