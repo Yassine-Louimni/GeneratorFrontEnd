@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react"; 
 import { Helmet } from "react-helmet";
 import AOS from "aos";
+import themeCSS from './css/theme.min.css?raw';
+import theme1CSS from './css/theme.css?raw';
+import updateCSS from './css/UpdateTemplate.css?raw';
 import "aos/dist/aos.css";
 import "./css/theme.css";
 import "./UpdateTemplate.css";
@@ -9,6 +12,8 @@ import imge1 from "./img/webp/people15.webp";
 import imge2 from "./img/webp/people15.webp";
 import imge3 from "./img/webp/people4.webp";
 import imge4 from "./img/webp/people15.webp";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
 
 
 const UpdateTemplate = () => {
@@ -62,9 +67,8 @@ const UpdateTemplate = () => {
     // Vous pouvez ici ajouter une intégration backend pour sauvegarder les données.
   };
   
-  const handleDownload = () => {
-    // Create an HTML structure with updated template content
-    const templateHTML = `<!DOCTYPE html>
+  const handleDownload = async () => {
+    const htmlContent = `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -75,8 +79,8 @@ const UpdateTemplate = () => {
     <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon.png" />
     <title>${variables.slideText1}</title>
     <link rel="stylesheet" href="aos/dist/aos.css" />
-    <link rel="stylesheet" href="./css/theme.css" />
-    <link rel="stylesheet" href="./css/UpdateTemplate.css" />
+    <link rel="stylesheet" href="css/theme.min.css">
+    <link rel="stylesheet" href="css/UpdateTemplate.css" />
   </head>
   <body>
     <div data-bs-spy="scroll" data-bs-target="#navScroll">
@@ -207,19 +211,22 @@ const UpdateTemplate = () => {
 </html>
 
     `;
-  
-    // Create a Blob and download the HTML file
-    const blob = new Blob([templateHTML], { type: "text/html" });
-    const url = URL.createObjectURL(blob);
-  
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "template.html"; // File name
-    a.click();
-  
-    URL.revokeObjectURL(url);
+    const zip = new JSZip();
+    zip.file("template.html", htmlContent);
+    zip.file("css/theme.min.css", themeCSS);
+    zip.file("css/theme.min.css", theme1CSS);
+    zip.file("css/UpdateTemplate.css", updateCSS);
+// Ajouter dynamiquement les images uploadées
+Object.entries(variables).forEach(([key, value]) => {
+  if (key.startsWith("image") && value.startsWith("data:image/")) {
+    const base64 = value.split(",")[1]; // Extraire uniquement la partie base64
+    const extension = value.substring("data:image/".length, value.indexOf(";base64")); // Exemple: 'png', 'jpeg'
+    zip.file(`img/${key}.${extension}`, base64, { base64: true });
+  }
+});
+    const blob = await zip.generateAsync({ type: "blob" });
+    saveAs(blob, "template_site.zip");
   };
-  
 
   return (
    
