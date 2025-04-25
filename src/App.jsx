@@ -8,6 +8,7 @@ import Explore from './Components/Explore/Explore';
 import UpdateTemplate from './Components/Template/UpdateTemplate';
 import Customization from './Components/Customization/Customization';
 import Customize from './Components/Customization/Customize/Customize';
+import Pricing from './Components/Pricing/Pricing';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" element={<SignInForm />} />
           <Route path="/template" element={<Template />} />
           <Route path="/explore" element={<Explore />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/update" element={<UpdateTemplate />} />
           <Route path='/custom' element={<Customization />} />
           <Route path='/customize' element={<Customize/>} />
